@@ -1,4 +1,4 @@
-package com.app.yanawa.domain.member;
+package com.app.yanawa.domain.applicant;
 
 import lombok.*;
 import org.springframework.stereotype.Component;
@@ -9,10 +9,12 @@ import org.springframework.stereotype.Component;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class MemberVO {
+public class ApplicantVO {
     @EqualsAndHashCode.Include
     private Long id;
     private Long userId;
+    private Long teamPostId;
+    private String introduce;
     private String createdDate;
     private String updatedDate;
 }
