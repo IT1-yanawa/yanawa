@@ -30,6 +30,7 @@
                             action="/freewrite/write"
                             method="POST"
                             enctype="multipart/form-data"
+                            th:action="@{/freewrite/write}"
                         >
                             <ul class="content3">
                                 <li class="content4">
@@ -49,6 +50,7 @@
                                             border-radius: 5px;
                                             margin-top: 8px;
                                         "
+                                        required
                                     >
                                         <option value="질문">질문</option>
                                         <option value="잡담">잡담</option>
@@ -74,7 +76,7 @@
                                                 aria-required="true"
                                                 class="content8"
                                                 type="text"
-                                                value=""
+                                               required
                                                 style="width: 100%"
                                             />
                                             <span
@@ -112,6 +114,7 @@
                                                     width: 100%;
                                                     height: 150px;
                                                 "
+                                                required
                                             ></textarea>
                                         </div>
                                     </div>

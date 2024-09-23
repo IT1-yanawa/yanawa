@@ -35,7 +35,7 @@ public class FreewriteController {
     }
 
     @PostMapping("write")
-    public String write(FreewriteDTO freewriteDTO, @RequestParam("fileUpload") MultipartFile file) {
+    public String write(FreewriteDTO freewriteDTO, @RequestParam("attachment") MultipartFile file) {
         // 사용자 정보 설정
         freewriteDTO.setUserId(((UserVO) session.getAttribute("user")).getId());
 

@@ -61,67 +61,7 @@
                                         style="display: flex"
                                     >
                                         <div class="section_container">
-                                            <div class="flex">
-                                                <div
-                                                    class="ydsfooter_munu_bar section_document"
-                                                    href="/hc/ko/articles/17845227566745-%EC%95%8C%EB%A6%BC-%EC%8B%A0%EC%B2%AD%ED%95%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%8A%94-%EC%96%B4%EB%94%94%EC%84%9C-%ED%99%95%EC%9D%B8%ED%95%98%EB%82%98%EC%9A%94"
-                                                >
-                                                    <div
-                                                        style="margin-top: 10px"
-                                                    >
-                                                        <div
-                                                            class="sc-73fafee5-0 ejqkLc"
-                                                        >
-                                                            <img
-                                                                src="https://image.wanted.co.kr/gigs/www/wanted/icon-business-bag.svg"
-                                                            />
-                                                        </div>
 
-                                                        <div
-                                                            class="FAQ_card_title"
-                                                        >
-                                                            <div
-                                                                class="font-size-sm font-medium FAQ_card_answers"
-                                                                style="
-                                                                    width: 40px;
-                                                                    text-align: center;
-                                                                    margin-top: 4px;
-                                                                "
-                                                            >
-                                                                닉네임
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="writetitle">
-                                                        글의 제목
-                                                        <span
-                                                            style="
-                                                                color: #666;
-                                                                font-size: 12px;
-                                                            "
-                                                            >(질문)</span
-                                                        >
-
-                                                        <div
-                                                            class="writecontent"
-                                                        >
-                                                            안녕하세요
-                                                            오현준입니다
-                                                            안녕하세요
-                                                            오현준입니다
-                                                            안녕하세요
-                                                            오현준입니다
-                                                            안녕하세요
-                                                            오현준입니다
-                                                            안녕하세요
-                                                            오현준입니다
-                                                            안녕하세요
-                                                            오현준입니다
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <div class="wrap7">
                                                 <div>
                                                     <div class="wrap8 content8">
@@ -149,47 +89,41 @@
                                                     >
                                                 </div>
                                             </div>
-                                            <div class="flex">
-                                                <div
-                                                    class="ydsfooter_munu_bar section_document"
-                                                    href="/hc/ko/articles/17845227566745-%EC%95%8C%EB%A6%BC-%EC%8B%A0%EC%B2%AD%ED%95%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%8A%94-%EC%96%B4%EB%94%94%EC%84%9C-%ED%99%95%EC%9D%B8%ED%95%98%EB%82%98%EC%9A%94"
-                                                >
-                                                    <div
-                                                        style="margin-top: 10px"
-                                                    >
-                                                        <div
-                                                            class="sc-73fafee5-0 ejqkLc"
-                                                        >
-                                                            <img
-                                                                src="https://image.wanted.co.kr/gigs/www/wanted/icon-business-bag.svg"
-                                                            />
-                                                        </div>
+                                            <div th:each="freewrite : ${freewrites}">
+                                                <div class="flex">
+                                                    <div class="ydsfooter_munu_bar section_document" href="#">
+                                                        <div style="margin-top: 10px">
+                                                            <div class="sc-73fafee5-0 ejqkLc">
+                                                                <img src="https://image.wanted.co.kr/gigs/www/wanted/icon-business-bag.svg" />
+                                                            </div>
 
-                                                        <div
-                                                            class="FAQ_card_title"
-                                                        >
-                                                            <div
-                                                                class="font-size-sm font-medium FAQ_card_answers"
-                                                                style="
-                                                                    width: 40px;
-                                                                    text-align: center;
-                                                                    margin-top: 4px;
-                                                                "
-                                                            >
-                                                                닉네임
+                                                            <!-- 사용자 닉네임 -->
+                                                            <div class="FAQ_card_title">
+                                                                <div class="font-size-sm font-medium FAQ_card_answers"
+                                                                     style="width: 40px; text-align: center; margin-top: 4px;">
+                                                                    <span th:text="${freewrite.userNickname}">닉네임</span>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="writetitle">
-                                                        글의 제목
-                                                        <div
-                                                            class="writecontent"
-                                                        >
-                                                            글의 내용
+
+                                                        <!-- 글 제목 -->
+                                                        <div class="writetitle">
+                                                            <span th:text="${freewrite.postTitle}">글의 제목</span>
+
+                                                            <!-- 게시글 유형 -->
+                                                            <span style="color: #666; font-size: 12px;">
+                                                            (<span th:text="${freewrite.editSportKind}">질문</span>)
+                                                            </span>
+                                                        </div>
+
+                                                        <!-- 글 내용 -->
+                                                        <div class="writecontent">
+                                                            <span th:text="${freewrite.postContent}">글의 내용</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+
 
 
 
