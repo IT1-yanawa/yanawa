@@ -9,7 +9,7 @@ CREATE TABLE TBL_FREEWRITE (
                                    REFERENCES TBL_POST(ID),
                                CONSTRAINT FK_FREEWRITE_USER FOREIGN KEY (USER_ID)
                                    REFERENCES TBL_USER(ID)
-);
+);sss
 CREATE SEQUENCE SEQ_FREEWRITE
 START WITH 1
           INCREMENT BY 1;

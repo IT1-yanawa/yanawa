@@ -1,20 +1,32 @@
 package com.app.yanawa.repository.freewrite;
 
-<<<<<<< HEAD
-
+import com.app.yanawa.domain.freewrite.FreewriteDTO;
 import com.app.yanawa.domain.freewrite.FreewriteVO;
+import com.app.yanawa.domain.freewrite.Attachment;
+import com.app.yanawa.domain.freewrite.Pagination;
 import com.app.yanawa.mapper.freewrite.FreewriteMapper;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
 public class FreewriteDAO {
     private final FreewriteMapper freewriteMapper;
+    private final SqlSession sqlSession;
 
-    public void save(FreewriteVO freewriteVO) {freewriteMapper.insert(freewriteVO);}
+    public void save(FreewriteVO freewriteVO) {
+        freewriteMapper.insert(freewriteVO);
+    }
 
-=======
-public class FreewriteDAO {
->>>>>>> a71cca4e631d4857e8c42a9c3d6e093fd9495d9b
+    public void insertAttachment(Attachment attachment) {
+        sqlSession.insert("com.app.yanawa.mapper.freewrite.FreewriteMapper.insertAttachment", attachment);
+    }
+
+    public List<FreewriteDTO> findAll(Pagination pagination, String order) {
+        return freewriteMapper.selectAll(pagination, order);
+    }
+    public int getTotal(){return freewriteMapper.selectTotal();}
 }

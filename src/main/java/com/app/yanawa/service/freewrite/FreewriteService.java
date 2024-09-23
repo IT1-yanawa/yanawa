@@ -1,11 +1,15 @@
 package com.app.yanawa.service.freewrite;
 
-<<<<<<< HEAD
+import com.app.yanawa.domain.freewrite.FreewriteDTO;
 import com.app.yanawa.domain.freewrite.FreewriteVO;
+import com.app.yanawa.domain.freewrite.Attachment;
+import com.app.yanawa.domain.freewrite.Pagination;
+
+import java.util.List;
 
 public interface FreewriteService {
-    public void write(FreewriteVO freewriteVO);
-=======
-public interface FreewriteService {
->>>>>>> a71cca4e631d4857e8c42a9c3d6e093fd9495d9b
+     Long write(FreewriteVO freewriteVO);
+    void saveAttachment(Attachment attachment);
+    public List<FreewriteDTO> getList(Pagination pagination, String order);
+    public int getTotal();
 }
