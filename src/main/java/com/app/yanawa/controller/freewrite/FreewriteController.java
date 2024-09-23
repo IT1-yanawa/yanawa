@@ -1,8 +1,7 @@
 package com.app.yanawa.controller.freewrite;
 
-<<<<<<< HEAD
-
 import com.app.yanawa.domain.freewrite.FreewriteDTO;
+import com.app.yanawa.domain.user.UserVO;
 import com.app.yanawa.repository.freewrite.FreewriteDAO;
 import com.app.yanawa.service.freewrite.FreewriteService;
 import jakarta.servlet.http.HttpSession;
@@ -22,7 +21,9 @@ public class FreewriteController {
     private final HttpSession session;
 
     @GetMapping("write")
-    public void goToWriteForm(FreewriteDTO freewriteDTO) {;}
+    public void goToWriteForm(FreewriteDTO freewriteDTO) {
+        ;
+    }
 
     @PostMapping("write")
     public String write(FreewriteDTO freewriteDTO) {
@@ -32,8 +33,4 @@ public class FreewriteController {
         return "redirect:/freewrite/list";
     }
 
-
-=======
-public class FreewriteController {
->>>>>>> a71cca4e631d4857e8c42a9c3d6e093fd9495d9b
 }
