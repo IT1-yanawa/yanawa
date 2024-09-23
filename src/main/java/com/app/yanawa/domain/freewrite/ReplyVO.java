@@ -1,6 +1,6 @@
 package com.app.yanawa.domain.freewrite;
 
-<<<<<<< HEAD
+
 import lombok.*;
 import org.springframework.stereotype.Component;
 
@@ -19,7 +19,5 @@ public class ReplyVO {
     private Long postId;
     private String createdDate;
     private String updatedDate;
-=======
-public class ReplyVO {
->>>>>>> 7f318cfe218b61a06e15c2301ab7f94d75b427d3
+
 }
