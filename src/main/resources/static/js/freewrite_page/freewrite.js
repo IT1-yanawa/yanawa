@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const descriptionInput = document.getElementById("content13");
     const charCountElement = document.getElementById("char-count");
     const maxLength = 45;
+    const categoryInput = document.getElementById("editSportKind");
+    const filePathInput = document.getElementById("content17"); // 파일 경로
 
+    // 제목 입력 시 글자 수 카운트
     titleInput.addEventListener("input", function () {
         const currentLength = titleInput.value.length;
         charCountElement.textContent = `${currentLength}/${maxLength}`;
@@ -22,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // 내용 입력 시 테두리 복원
     descriptionInput.addEventListener("input", function () {
         // 타이핑 시 테두리 복원
         if (descriptionInput.classList.contains("error")) {
@@ -51,6 +55,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (hasError) {
             alert("모든 필드를 작성해주세요.");
+            return; // 오류가 있을 경우 서버로 데이터를 전송하지 않음
         }
+
+        // 서버에 전달할 데이터 수집
+        const postData = {
+            category: categoryInput.value,
+            title: titleInput.value,
+            content: descriptionInput.value,
+            filePath: filePathInput.value // 아직 파일 경로는 사용하지 않음 (예시)
+        };
+
+        // 데이터 서버로 전송
+        fetch('/post/write', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(postData)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                alert('글 작성이 성공적으로 완료되었습니다.');
+                // 성공 시 페이지를 리로드하거나 다른 작업을 수행
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('글 작성 중 오류가 발생했습니다.');
+            });
+
+        e.preventDefault(); // 폼의 기본 제출 동작을 중단
     });
 });
