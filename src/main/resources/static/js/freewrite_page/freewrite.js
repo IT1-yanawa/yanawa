@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // 제목 글자 수 초과 시 제한(이미 만들어놔서 지우지않음)
         if (currentLength > maxLength) {
             titleInput.value = titleInput.value.slice(0, maxLength);
-            charCountElement.textContent = `${maxLength}/${maxLength}`;
+            charCountElement.textContent = `${maxLength}/${maxLength}`;git
+            
             alert("제목은 최대 45자까지 입력 가능합니다.");
         }
 
