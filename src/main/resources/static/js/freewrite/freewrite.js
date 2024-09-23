@@ -11,11 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const currentLength = titleInput.value.length;
         charCountElement.textContent = `${currentLength}/${maxLength}`;
 
-        // 제목 글자 수 초과 시 제한(이미 만들어놔서 지우지않음)
         if (currentLength > maxLength) {
             titleInput.value = titleInput.value.slice(0, maxLength);
-            charCountElement.textContent = `${maxLength}/${maxLength}`;git
-            
+            charCountElement.textContent = `${maxLength}/${maxLength}`;
             alert("제목은 최대 45자까지 입력 가능합니다.");
         }
 
@@ -28,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 내용 입력 시 테두리 복원
     descriptionInput.addEventListener("input", function () {
-        // 타이핑 시 테두리 복원
         if (descriptionInput.classList.contains("error")) {
             descriptionInput.classList.remove("error");
             descriptionInput.style.borderColor = "#e1e3e8";
@@ -79,7 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 console.log('Success:', data);
                 alert('글 작성이 성공적으로 완료되었습니다.');
-                // 성공 시 페이지를 리로드하거나 다른 작업을 수행
+
+                // 성공 시 /freewrite/list 페이지로 리다이렉션
+                window.location.href = '/freewrite/list';
             })
             .catch((error) => {
                 console.error('Error:', error);
