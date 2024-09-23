@@ -270,6 +270,13 @@ a {
     padding-right: 22%;
 }
 
+<<<<<<< HEAD
+=======
+.email .birth-div input {
+    padding-right: 5%;
+}
+
+>>>>>>> 7f318cfe218b61a06e15c2301ab7f94d75b427d3
 .input-style {
     width: 100%;
     height: 48px;
@@ -303,6 +310,15 @@ input::placeholder {
     color: rgb(199 200 201);
 }
 
+<<<<<<< HEAD
+=======
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance:none;
+  margin: 0;
+}
+
+>>>>>>> 7f318cfe218b61a06e15c2301ab7f94d75b427d3
 .input-style:focus {
     border: 1px solid #0066ff; 
 }
