@@ -132,6 +132,8 @@ saveBtn.addEventListener("click", function (event) {
     profileView.style.display = "none"; // profile-view 화면 숨기기
 });
 // =====================================================================================
+<<<<<<< HEAD
+=======
 const editIntroBtn4 = document.getElementById("editIntroBtn4");
 const introForm4 = document.getElementById("introForm4");
 const cancelBtn4 = document.getElementById("cancelBtn4");
@@ -163,6 +165,7 @@ saveBtn4.addEventListener("click", function (event) {
 
 
 // =====================================================================================
+>>>>>>> 7f318cfe218b61a06e15c2301ab7f94d75b427d3
 // 선호하는 포지션
 // 요소 선택
 const editIntroBtn2 = document.getElementById("editIntroBtn2");

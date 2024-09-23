@@ -96,9 +96,17 @@ ol, ul {
 }
 .main_heder_all {
     width: 100%;
+<<<<<<< HEAD
+   
     top: 0;
     border-bottom: 1px solid rgba(0, 0, 0, .08);
     z-index: 800;
+
+=======
+    top: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .08);
+    z-index: 800;
+>>>>>>> 7f318cfe218b61a06e15c2301ab7f94d75b427d3
 }
 .main_heder_all_1 {
     position: absolute;
@@ -140,6 +148,11 @@ ol, ul {
     height: 100%;
     -ms-flex-align: stretch;
     align-items: stretch;
+<<<<<<< HEAD
+  
+   
+=======
+>>>>>>> 7f318cfe218b61a06e15c2301ab7f94d75b427d3
 }
 .logo_img{
     width: 100px;
