@@ -11,8 +11,7 @@ CREATE TABLE TBL_FREEWRITE (
                                    REFERENCES TBL_USER(ID)
 );
 CREATE SEQUENCE SEQ_FREEWRITE
-START WITH 1      -- 시퀀스 시작 값
-          INCREMENT BY 1    -- 증가 값
-          NOCACHE           -- 캐시 사용 안 함 (옵션)
-          NOMAXVALUE;       -- 최대값 없음
+START WITH 1
+          INCREMENT BY 1;
+
 
