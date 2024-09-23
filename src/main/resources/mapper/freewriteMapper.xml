@@ -1,48 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.app.yanawa.mapper.FreewriteMapper">
+<mapper namespace="com.app.yanawa.mapper.freewrite.FreewriteMapper">
+
+    <!-- TBL_FREEWRITE에 데이터 삽입 -->
     <insert id="insert">
-        INSERT INTO TBL_POST(ID, POST_TITLE, POST_CONTENT, USER_ID, POST_READ_COUNT)
-        VALUES(SEQ_POST.NEXTVAL, #{postTitle}, #{postContent}, #{userId}, #{postReadCount})
+        INSERT INTO TBL_FREEWRITE(POST_ID, POST_READ_COUNT, REPLY_COUNT, USER_ID, CREATED_DATE, UPDATED_DATE)
+        VALUES(SEQ_FREEWRITE.NEXTVAL, #{postReadCount}, #{replyCount}, #{userId}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
     </insert>
+
+    <!-- TBL_FREEWRITE와 TBL_USER 조인하여 데이터 조회 -->
     <select id="selectAll" resultType="postDTO">
-        SELECT P2.ID, USER_NAME, POST_TITLE, POST_CONTENT, USER_ID, CREATED_DATE, UPDATED_DATE, POST_READ_COUNT
-        FROM TBL_USER U JOIN
-        (
-        SELECT ROWNUM R, ID, POST_TITLE, POST_CONTENT, USER_ID, CREATED_DATE, UPDATED_DATE, POST_READ_COUNT
-        FROM
-        (
-        SELECT ID, POST_TITLE, POST_CONTENT, USER_ID, CREATED_DATE, UPDATED_DATE, POST_READ_COUNT
-        FROM TBL_POST
+        SELECT F.POST_ID, U.USER_NICKNAME, F.POST_READ_COUNT, F.REPLY_COUNT, F.USER_ID, F.CREATED_DATE, F.UPDATED_DATE
+        FROM TBL_USER U
+        JOIN TBL_FREEWRITE F ON U.ID = F.USER_ID
+        WHERE F.POST_ID IS NOT NULL
         ORDER BY
         <choose>
-            <when test="order == 'recent'.toString()">ID</when>
-            <otherwise>POST_READ_COUNT</otherwise>
+            <when test="order == 'recent'.toString()">F.POST_ID</when>
+            <otherwise>F.POST_READ_COUNT</otherwise>
         </choose>
         DESC
-        ) P1
-        <![CDATA[
-            WHERE ROWNUM <= #{pagination.endRow}) P2
-        ON U.ID = P2.USER_ID AND P2.R >= #{pagination.startRow}
-        ]]>
+        OFFSET #{pagination.startRow} ROWS FETCH NEXT #{pagination.pageSize} ROWS ONLY
     </select>
+
+    <!-- 총 게시물 수 조회 -->
     <select id="selectTotal">
-        SELECT COUNT(*) FROM TBL_POST
+        SELECT COUNT(*) FROM TBL_FREEWRITE
     </select>
+
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

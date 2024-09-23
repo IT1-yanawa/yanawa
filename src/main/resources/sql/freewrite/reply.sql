@@ -10,3 +10,5 @@ CREATE TABLE TBL_REPLY (
                            CONSTRAINT FK_REPLY_POST FOREIGN KEY (POST_ID)
                                REFERENCES TBL_FREEWRITE(POST_ID)
 );
+DROP TABLE TBL_REPLY;
+c

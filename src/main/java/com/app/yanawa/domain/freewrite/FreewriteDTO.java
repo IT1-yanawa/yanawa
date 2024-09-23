@@ -6,12 +6,13 @@ import org.springframework.stereotype.Component;
 @Component
 @Getter
 @Setter
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@ToString
+@EqualsAndHashCode
 @NoArgsConstructor
-@AllArgsConstructor
-public class FreewriteVO {
 
-    @EqualsAndHashCode.Include
+public class FreewriteDTO {
+
+
     private Long id;
     private String postTitle;
     private String postContent;
@@ -20,4 +21,9 @@ public class FreewriteVO {
     private String updatedDate;
     private int postReadCount;
     private int replyCount;
+    private String userNickname;
+
+    public FreewriteVO toVO() {
+        return new FreewriteVO(id, postTitle, postContent, userId, createdDate, updatedDate, postReadCount, replyCount);
+    }
 }
