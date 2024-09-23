@@ -5,7 +5,6 @@
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
 <<<<<<< HEAD
-<<<<<<< HEAD
     <typeAliases>
         <typeAlias type="com.app.yanawa.domain.freewrite.FreewriteVO" alias="freewriteVO"/>
         <typeAlias type="com.app.yanawa.domain.freewrite.FreewriteDTO" alias="freewriteDTO"/>
@@ -14,11 +13,4 @@
     </typeAliases>
 =======
 >>>>>>> 7f318cfe218b61a06e15c2301ab7f94d75b427d3
-=======
-
-    <typeAliases>
-        <typeAlias type="com.app.yanawa.domain.user.UserVO" alias="userVO"/>
-        <typeAlias type="com.app.yanawa.domain.user.UserDTO" alias="userDTO"/>
-    </typeAliases>
->>>>>>> yhj
 </configuration>

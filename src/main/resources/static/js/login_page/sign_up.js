@@ -139,7 +139,6 @@ const duplicateCheckNickname = document.getElementById(
 const duplicateCheckButtonNickname = document.getElementById(
     "duplicate-check-button-nickname"
 );
-const birthInput = document.getElementById("birth-1");
 
 const mobileInput = document.getElementById("mobile-input");
 const getCodeSpan = document.getElementById("get-code-span");
@@ -147,6 +146,11 @@ const getCodeButton = document.getElementById("get-code-button");
 
 const nameInput = document.getElementById("name-input");
 const getCodeInput = document.getElementById("get-code-input");
+<<<<<<< HEAD
+=======
+const birthInput = document.getElementById("birth-1");
+const genderInput = document.getElementById("gender");
+>>>>>>> 7f318cfe218b61a06e15c2301ab7f94d75b427d3
 const passwordInput = document.getElementById("password-input");
 const pwOnemoreInput = document.getElementById("pw-onemore-input");
 const finalButton = document.getElementById("final-button");
@@ -219,7 +223,11 @@ const finalButton = document.getElementById("final-button");
             nameInput.value.trim() !== "" &&
             nicknameInput.value.trim() !== "" &&
             getCodeInput.value.trim() !== "" &&
+<<<<<<< HEAD
+=======
             birthInput.value.trim() !== "" &&
+            genderInput.value.trim() !== "" &&
+>>>>>>> 7f318cfe218b61a06e15c2301ab7f94d75b427d3
             passwordInput.value.trim() !== "" &&
             pwOnemoreInput.value.trim() !== "" &&
             [...requiredChecks][0].checked == true &&
@@ -239,7 +247,11 @@ const finalButton = document.getElementById("final-button");
     nameInput.addEventListener("input", updateCodeState);
     nicknameInput.addEventListener("input", updateCodeState);
     getCodeInput.addEventListener("input", updateCodeState);
+<<<<<<< HEAD
+=======
     birthInput.addEventListener("input", updateCodeState);
+    genderInput.addEventListener("input", updateCodeState);
+>>>>>>> 7f318cfe218b61a06e15c2301ab7f94d75b427d3
     passwordInput.addEventListener("input", updateCodeState);
     pwOnemoreInput.addEventListener("input", updateCodeState);
     inputchecks.forEach((check) => {
