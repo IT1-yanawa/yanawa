@@ -7,8 +7,8 @@ CREATE TABLE TBL_MATCHING(
                              DATE_CORDINATE NUMBER DEFAULT 0 NOT NULL,
                              LOCAL_CITY_ID NUMBER,
                              LOCAL_CITY_DETAIL VARCHAR2(255) NOT NULL,
-                             CREATED_DATE DATE DEFAULT SYSDATE NOT NULL,
-                             UPDATED_DATE DATE NOT NULL,
+                             CREATED_DATE DATE DEFAULT CURRENT_TIMESTAMP,
+                             UPDATED_DATE DATE DEFAULT CURRENT_TIMESTAMP,
                              CONSTRAINT FK_MATCHING_POST FOREIGN KEY(POST_ID)
                                  REFERENCES TBL_POST(ID),
                              CONSTRAINT FK_MATCHING_TIME FOREIGN KEY(TIME_ID)

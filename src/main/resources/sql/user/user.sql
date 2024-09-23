@@ -12,8 +12,8 @@ CREATE TABLE TBL_USER(
                          USER_POSITION_KIND VARCHAR2(255),
                          USER_SPORT_HISTORY VARCHAR2(255),
                          USER_BIRTH DATE NOT NULL,
-                         CREATED_DATE DATE DEFAULT SYSDATE NOT NULL,
-                         UPDATED_DATE DATE NOT NULL
+                         CREATED_DATE DATE DEFAULT CURRENT_TIMESTAMP,
+                         UPDATED_DATE DATE DEFAULT CURRENT_TIMESTAMP
 );
 
 SELECT * FROM TBL_USER;
