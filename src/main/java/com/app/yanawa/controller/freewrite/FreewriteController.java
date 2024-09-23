@@ -1,5 +1,6 @@
 package com.app.yanawa.controller.freewrite;
 
+<<<<<<< HEAD
 
 import com.app.yanawa.domain.freewrite.FreewriteDTO;
 import com.app.yanawa.repository.freewrite.FreewriteDAO;
@@ -32,4 +33,7 @@ public class FreewriteController {
     }
 
 
+=======
+public class FreewriteController {
+>>>>>>> a71cca4e631d4857e8c42a9c3d6e093fd9495d9b
 }

@@ -1,18 +1,17 @@
-package com.app.yanawa.domain.member;
+package com.app.yanawa.domain.notice;
 
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.stereotype.Component;
 
 @Component
-@Getter
+@Getter @Setter
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@NoArgsConstructor
-@AllArgsConstructor
-public class MemberVO {
-    @EqualsAndHashCode.Include
+public class NoticeDTO {
     private Long id;
-    private Long userId;
     private String createdDate;
     private String updatedDate;
 }

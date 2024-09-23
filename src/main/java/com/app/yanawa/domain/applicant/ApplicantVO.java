@@ -1,27 +1,20 @@
-package com.app.yanawa.domain.freewrite;
+package com.app.yanawa.domain.applicant;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> a71cca4e631d4857e8c42a9c3d6e093fd9495d9b
 import lombok.*;
 import org.springframework.stereotype.Component;
 
 @Component
 @Getter
-@Setter
+@ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class FreewriteVO {
-
+public class ApplicantVO {
     @EqualsAndHashCode.Include
     private Long id;
-    private String postTitle;
-    private String postContent;
     private Long userId;
+    private Long teamPostId;
+    private String introduce;
     private String createdDate;
     private String updatedDate;
-    private int postReadCount;
-    private int replyCount;
 }

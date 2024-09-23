@@ -17,3 +17,4 @@ public class TimeMapperTests {
         log.info("{}", timeMapper.getTime());
     }
 }
+
