@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.yanawa.mapper.user.UserMapper">
     <insert id="insert">
-        INSERT INTO TBL_USER(ID, USER_NAME, USER_EMAIL,USER_NICKNAME, USER_PHONE, USER_PASSWORD, USER_GENDER)
-        VALUES (SEQ_USER.NEXTVAL, #{userName}, #{userEmail}, #{userNickName}, #{userPhone}, #{userPassword}, #{userGender})
+        INSERT INTO TBL_USER(ID, USER_NAME, USER_EMAIL,USER_NICKNAME, USER_PHONE, USER_PASSWORD, USER_GENDER ,USER_POINT)
+        VALUES (SEQ_USER.NEXTVAL, #{userName}, #{userEmail}, #{userNickName}, #{userPhone}, #{userPassword}, #{userGender}, #{userPoint})
     </insert>
 </mapper>

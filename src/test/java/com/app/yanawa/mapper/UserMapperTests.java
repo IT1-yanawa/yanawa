@@ -22,6 +22,7 @@ public class UserMapperTests {
         userDTO.setUserPhone("01012345678");
         userDTO.setUserPassword("1234");
         userDTO.setUserGender("남");
+        userDTO.setUserPoint(100);
 
         userMapper.insert(userDTO.toVO());
     }
