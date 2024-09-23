@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.yanawa.mapper.FreewriteMapper">
+    <insert id="insert">
+        INSERT INTO TBL_POST(ID, POST_TITLE, POST_CONTENT, USER_ID, POST_READ_COUNT)
+        VALUES(SEQ_POST.NEXTVAL, #{postTitle}, #{postContent}, #{userId}, #{postReadCount})
+    </insert>
+    <select id="selectAll" resultType="postDTO">
+        SELECT P2.ID, USER_NAME, POST_TITLE, POST_CONTENT, USER_ID, CREATED_DATE, UPDATED_DATE, POST_READ_COUNT
+        FROM TBL_USER U JOIN
+        (
+        SELECT ROWNUM R, ID, POST_TITLE, POST_CONTENT, USER_ID, CREATED_DATE, UPDATED_DATE, POST_READ_COUNT
+        FROM
+        (
+        SELECT ID, POST_TITLE, POST_CONTENT, USER_ID, CREATED_DATE, UPDATED_DATE, POST_READ_COUNT
+        FROM TBL_POST
+        ORDER BY
+        <choose>
+            <when test="order == 'recent'.toString()">ID</when>
+            <otherwise>POST_READ_COUNT</otherwise>
+        </choose>
+        DESC
+        ) P1
+        <![CDATA[
+            WHERE ROWNUM <= #{pagination.endRow}) P2
+        ON U.ID = P2.USER_ID AND P2.R >= #{pagination.startRow}
+        ]]>
+    </select>
+    <select id="selectTotal">
+        SELECT COUNT(*) FROM TBL_POST
+    </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
